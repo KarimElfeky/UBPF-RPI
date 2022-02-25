@@ -1,0 +1,218 @@
+Clear
+set DefaultBaseFrequency=50
+New circuit.TestNet
+!edit Vsource.Source bus1=1 basekv=0.4 pu=1.0001 phases=3 ISC3=900 ISC1=500
+! The name of the first voltage source must be "Voltage.Source", literally! The name of the rest does not matter.
+Edit Vsource.Source bus1=1.1 basekv=0.2309401076758503 pu=1.0001 phases=1 Angle=0        R1=0.00000000001 X1=0.0000000001
+New Vsource.Source2 bus1=1.2 basekv=0.2309401076758503 pu=1.0001 phases=1 Angle=-120 R1=0.00000000001 X1=0.0000000001
+New Vsource.Source3 bus1=1.3 basekv=0.2309401076758503 pu=1.0001 phases=1 Angle=120  R1=0.00000000001 X1=0.0000000001
+New Vsource.Source4 bus1=1.4 basekv=0.2309401076758503 pu=0 phases=1 Angle=0             R1=0.00000000001 X1=0.0000000001
+redirect linecode.txt
+! =========================================
+!New Transformer.TD009460 windings=2  Buses=[0 1.1.2.3.4] Conns=[Delta Wye] kVs=[22 0.420] kVAs=[630 630] XHL=4.0 sub=y
+!New Reactor.Gnd1 phases=1 bus1=1.4 bus2=1.0 R=5 X=0.01
+! =========================================
+! El nombre de acoplamientos capacitivos de una l�nea deb comenzar por el id de la linea, luego "_" seguido de el idenficador que se desee.
+!New Capacitor.75_Bus2_ab Bus1=76.1  Bus2=76.2 phases=1 Cuf=1000
+!New Capacitor.75_Bus1_ab Bus1=72.1  Bus2=72.2 phases=1 Cuf=1000
+! Emplear "new" en min�sculas para las cargas de tipo impedancia (CIL) y "New" para las cargas de potencia constante (PQ).
+
+New Line.10 Bus1=9.1.2.3.4  Bus2=11.1.2.3.4 phases=4 Linecode=304  Length=74    Units=m
+New Line.dou Bus1=9.1.2.3.4  Bus2=11.1.2.3.4 phases=4 Linecode=304  Length=74    Units=m
+
+New Line.11 Bus1=11.1.2.3.4 Bus2=12.1.2.3.4 phases=4 Linecode=304  Length=7.74  Units=m
+New Line.12 Bus1=12.1.2.3.4 Bus2=13.1.2.3.4 phases=4 Linecode=350  Length=1.05  Units=m
+New Line.13 Bus1=13.1.2.3.4 Bus2=14.1.2.3.4 phases=4 Linecode=350  Length=2.11  Units=m
+New Line.14 Bus1=13.1.2.3.4 Bus2=15.1.2.3.4 phases=4 Linecode=350  Length=1.04  Units=m
+New Line.15 Bus1=15.1.2.3.4 Bus2=16.1.2.3.4 phases=4 Linecode=350  Length=1.05  Units=m
+New Line.16 Bus1=15.1.2.3.4 Bus2=17.1.2.3.4 phases=4 Linecode=350  Length=2.1   Units=m
+New Line.17 Bus1=17.1.2.3.4 Bus2=18.1.2.3.4 phases=4 Linecode=350  Length=2.54  Units=m
+New Line.18 Bus1=14.1.2.3.4 Bus2=19.1.2.3.4 phases=4 Linecode=350  Length=2.53  Units=m
+New Line.19 Bus1=2.1.2.3.4  Bus2=20.1.2.3.4 phases=4 Linecode=304  Length=80    Units=m
+New Line.20 Bus1=20.1.2.3.4 Bus2=21.1.2.3.4 phases=4 Linecode=304  Length=94    Units=m
+New Line.21 Bus1=21.1.2.3.4 Bus2=22.1.2.3.4 phases=4 Linecode=304  Length=12    Units=m
+New Line.22 Bus1=2.1.2.3.4  Bus2=23.1.2.3.4 phases=4 Linecode=304  Length=96    Units=m
+New Line.23 Bus1=23.1.2.3.4 Bus2=24.1.2.3.4 phases=4 Linecode=304  Length=16    Units=m
+New Line.24 Bus1=23.1.2.3.4 Bus2=25.1.2.3.4 phases=4 Linecode=304  Length=23    Units=m
+New Line.25 Bus1=25.1.2.3.4 Bus2=26.1.2.3.4 phases=4 Linecode=304  Length=17    Units=m
+New Line.26 Bus1=26.1.2.3.4 Bus2=27.1.2.3.4 phases=4 Linecode=304  Length=24.48 Units=m
+New Line.27 Bus1=27.1.2.3.4 Bus2=28.1.2.3.4 phases=4 Linecode=301  Length=1.04  Units=m
+New Line.28 Bus1=28.1.2.3.4 Bus2=29.1.2.3.4 phases=4 Linecode=301  Length=2.1   Units=m
+New Line.29 Bus1=28.1.2.3.4 Bus2=30.1.2.3.4 phases=4 Linecode=301  Length=2.1   Units=m
+New Line.30 Bus1=30.1.2.3.4 Bus2=31.1.2.3.4 phases=4 Linecode=304  Length=24.69 Units=m
+New Line.31 Bus1=29.1.2.3.4 Bus2=32.1.2.3.4 phases=4 Linecode=301  Length=2.52  Units=m
+New Line.32 Bus1=31.1.2.3.4 Bus2=33.1.2.3.4 phases=4 Linecode=304  Length=27    Units=m
+New Line.33 Bus1=33.1.2.3.4 Bus2=34.1.2.3.4 phases=4 Linecode=304  Length=63    Units=m
+New Line.34 Bus1=34.1.2.3.4 Bus2=35.1.2.3.4 phases=4 Linecode=304  Length=28    Units=m
+New Line.35 Bus1=35.1.2.3.4 Bus2=36.1.2.3.4 phases=4 Linecode=304  Length=53    Units=m
+New Line.36 Bus1=35.1.2.3.4 Bus2=37.1.2.3.4 phases=4 Linecode=304  Length=19    Units=m
+New Line.37 Bus1=36.1.2.3.4 Bus2=38.1.2.3.4 phases=4 Linecode=304  Length=15    Units=m
+New Line.38 Bus1=2.1.2.3.4  Bus2=39.1.2.3.4 phases=4 Linecode=304  Length=37    Units=m
+New Line.39 Bus1=39.1.2.3.4 Bus2=40.1.2.3.4 phases=4 Linecode=304  Length=33    Units=m
+New Line.40 Bus1=40.1.2.3.4 Bus2=41.1.2.3.4 phases=4 Linecode=304  Length=3     Units=m
+New Line.41 Bus1=2.1.2.3.4  Bus2=42.1.2.3.4 phases=4 Linecode=304  Length=117   Units=m
+New Line.42 Bus1=42.1.2.3.4 Bus2=43.1.2.3.4 phases=4 Linecode=304  Length=24.55 Units=m
+New Line.43 Bus1=43.1.2.3.4 Bus2=44.1.2.3.4 phases=4 Linecode=301  Length=1.04  Units=m
+New Line.44 Bus1=44.1.2.3.4 Bus2=45.1.2.3.4 phases=4 Linecode=301  Length=1.05  Units=m
+New Line.45 Bus1=44.1.2.3.4 Bus2=46.1.2.3.4 phases=4 Linecode=301  Length=2.11  Units=m
+New Line.46 Bus1=45.1.2.3.4 Bus2=47.1.2.3.4 phases=4 Linecode=301  Length=2.09  Units=m
+New Line.47 Bus1=45.1.2.3.4 Bus2=48.1.2.3.4 phases=4 Linecode=301  Length=1.04  Units=m
+New Line.48 Bus1=46.1.2.3.4 Bus2=49.1.2.3.4 phases=4 Linecode=301  Length=2.54  Units=m
+New Line.49 Bus1=47.1.2.3.4 Bus2=50.1.2.3.4 phases=4 Linecode=301  Length=2.56  Units=m
+New Line.50 Bus1=48.1.2.3.4 Bus2=51.1.2.3.4 phases=4 Linecode=304  Length=23.28 Units=m
+New Line.51 Bus1=51.1.2.3.4 Bus2=52.1.2.3.4 phases=4 Linecode=304  Length=37    Units=m
+New Line.52 Bus1=52.1.2.3.4 Bus2=53.1.2.3.4 phases=4 Linecode=304  Length=91    Units=m
+New Line.53 Bus1=53.1.2.3.4 Bus2=54.1.2.3.4 phases=4 Linecode=304  Length=13    Units=m
+New Line.54 Bus1=2.1.2.3.4  Bus2=55.1.2.3.4 phases=4 Linecode=304  Length=37    Units=m
+New Line.55 Bus1=55.1.2.3.4 Bus2=56.1.2.3.4 phases=4 Linecode=304  Length=47    Units=m
+New Line.56 Bus1=56.1.2.3.4 Bus2=57.1.2.3.4 phases=4 Linecode=304  Length=68    Units=m
+New Line.57 Bus1=57.1.2.3.4 Bus2=58.1.2.3.4 phases=4 Linecode=304  Length=12    Units=m
+New Line.58 Bus1=2.1.2.3.4  Bus2=59.1.2.3.4 phases=4 Linecode=304  Length=36    Units=m
+New Line.59 Bus1=59.1.2.3.4 Bus2=60.1.2.3.4 phases=4 Linecode=304  Length=35    Units=m
+New Line.60 Bus1=60.1.2.3.4 Bus2=61.1.2.3.4 phases=4 Linecode=304  Length=16    Units=m
+New Line.61 Bus1=60.1.2.3.4 Bus2=62.1.2.3.4 phases=4 Linecode=304  Length=113   Units=m
+New Line.62 Bus1=62.1.2.3.4 Bus2=63.1.2.3.4 phases=4 Linecode=309  Length=6     Units=m
+New Line.63 Bus1=62.1.2.3.4 Bus2=64.1.2.3.4 phases=4 Linecode=304  Length=35    Units=m
+New Line.64 Bus1=64.1.2.3.4 Bus2=65.1.2.3.4 phases=4 Linecode=309  Length=6     Units=m
+New Line.65 Bus1=64.1.2.3.4 Bus2=66.1.2.3.4 phases=4 Linecode=304  Length=66    Units=m
+New Line.66 Bus1=66.1.2.3.4 Bus2=67.1.2.3.4 phases=4 Linecode=304  Length=29    Units=m
+New Line.67 Bus1=66.1.2.3.4 Bus2=68.1.2.3.4 phases=4 Linecode=307  Length=7     Units=m
+New Line.68 Bus1=67.1.2.3.4 Bus2=69.1.2.3.4 phases=4 Linecode=304  Length=10.75 Units=m
+New Line.69 Bus1=69.1.2.3.4 Bus2=70.1.2.3.4 phases=4 Linecode=301  Length=1.05  Units=m
+New Line.70 Bus1=70.1.2.3.4 Bus2=71.1.2.3.4 phases=4 Linecode=301  Length=1.05  Units=m
+New Line.71 Bus1=70.1.2.3.4 Bus2=72.1.2.3.4 phases=4 Linecode=301  Length=2.1   Units=m
+New Line.72 Bus1=71.1.2.3.4 Bus2=73.1.2.3.4 phases=4 Linecode=301  Length=1.06  Units=m
+New Line.73 Bus1=71.1.2.3.4 Bus2=74.1.2.3.4 phases=4 Linecode=301  Length=2.1   Units=m
+New Line.74 Bus1=74.1.2.3.4 Bus2=75.1.2.3.4 phases=4 Linecode=301  Length=2.54  Units=m
+New Line.75 Bus1=72.1.2.3.4 Bus2=76.1.2.3.4 phases=4 Linecode=301  Length=2.54  Units=m
+
+New Line.1 Bus1=1.1.2.3.4  Bus2=2.1.2.3.4  phases=4 Linecode=304  Length=1     Units=m
+New Line.2 Bus1=2.1.2.3.4  Bus2=3.1.2.3.4  phases=4 Linecode=304  Length=37    Units=m
+New Line.3 Bus1=3.1.2.3.4  Bus2=4.1.2.3.4  phases=4 Linecode=304  Length=34    Units=m
+New Line.4 Bus1=3.1.2.3.4  Bus2=5.1.2.3.4  phases=4 Linecode=309  Length=4     Units=m
+New Line.5 Bus1=4.1.2.3.4  Bus2=6.1.2.3.4  phases=4 Linecode=309  Length=4     Units=m
+New Line.6 Bus1=4.1.2.3.4  Bus2=7.1.2.3.4  phases=4 Linecode=304  Length=8     Units=m
+New Line.7 Bus1=7.1.2.3.4  Bus2=8.1.2.3.4  phases=4 Linecode=304  Length=17    Units=m
+New Line.8 Bus1=7.1.2.3.4  Bus2=9.1.2.3.4  phases=4 Linecode=304  Length=53    Units=m
+New Line.9 Bus1=9.1.2.3.4  Bus2=10.1.2.3.4 phases=4 Linecode=307  Length=12    Units=m
+
+
+! =========================================
+New Loadshape.PQ1360494R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1360494R.csv) useactual=no
+New Loadshape.PQ1360494S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1360494S.csv) useactual=no
+New Loadshape.PQ1360494T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1360494T.csv) useactual=no
+New Loadshape.PQ1779111R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1779111R.csv) useactual=no
+New Loadshape.PQ1779111S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1779111S.csv) useactual=no
+New Loadshape.PQ1779111T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1779111T.csv) useactual=no
+New Loadshape.PQ1469314R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1469314R.csv) useactual=no
+New Loadshape.PQ1469314S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1469314S.csv) useactual=no
+New Loadshape.PQ1469314T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1469314T.csv) useactual=no
+New Loadshape.PQ1663574R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663574R.csv) useactual=no
+New Loadshape.PQ1663574S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663574S.csv) useactual=no
+New Loadshape.PQ1663574T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663574T.csv) useactual=no
+New Loadshape.PQ1663570R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663570R.csv) useactual=no
+New Loadshape.PQ1663570S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663570S.csv) useactual=no
+New Loadshape.PQ1663570T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663570T.csv) useactual=no
+New Loadshape.PQ1986275R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986275R.csv) useactual=no
+New Loadshape.PQ1986275S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986275S.csv) useactual=no
+New Loadshape.PQ1986275T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986275T.csv) useactual=no
+New Loadshape.PQ1986223R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986223R.csv) useactual=no
+New Loadshape.PQ1986223S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986223S.csv) useactual=no
+New Loadshape.PQ1986223T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986223T.csv) useactual=no
+New Loadshape.PQ2048360R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ2048360R.csv) useactual=no
+New Loadshape.PQ2048360S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ2048360S.csv) useactual=no
+New Loadshape.PQ2048360T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ2048360T.csv) useactual=no
+New Loadshape.PQ1360495R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1360495R.csv) useactual=no
+New Loadshape.PQ1360495S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1360495S.csv) useactual=no
+New Loadshape.PQ1360495T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1360495T.csv) useactual=no
+New Loadshape.PQ1986928R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986928R.csv) useactual=no
+New Loadshape.PQ1986928S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986928S.csv) useactual=no
+New Loadshape.PQ1986928T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986928T.csv) useactual=no
+New Loadshape.PQ1986783R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986783R.csv) useactual=no
+New Loadshape.PQ1986783S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986783S.csv) useactual=no
+New Loadshape.PQ1986783T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986783T.csv) useactual=no
+New Loadshape.PQ1986000R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986000R.csv) useactual=no
+New Loadshape.PQ1986000S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986000S.csv) useactual=no
+New Loadshape.PQ1986000T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1986000T.csv) useactual=no
+New Loadshape.PQ1779071R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1779071R.csv) useactual=no
+New Loadshape.PQ1779071S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1779071S.csv) useactual=no
+New Loadshape.PQ1779071T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1779071T.csv) useactual=no
+New Loadshape.PQ1663606R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663606R.csv) useactual=no
+New Loadshape.PQ1663606S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663606S.csv) useactual=no
+New Loadshape.PQ1663606T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663606T.csv) useactual=no
+New Loadshape.PQ1663620R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663620R.csv) useactual=no
+New Loadshape.PQ1663620S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663620S.csv) useactual=no
+New Loadshape.PQ1663620T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1663620T.csv) useactual=no
+New Loadshape.PQ2130827R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ2130827R.csv) useactual=no
+New Loadshape.PQ2130827S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ2130827S.csv) useactual=no
+New Loadshape.PQ2130827T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ2130827T.csv) useactual=no
+New Loadshape.PQ1987932R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1987932R.csv) useactual=no
+New Loadshape.PQ1987932S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1987932S.csv) useactual=no
+New Loadshape.PQ1987932T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1987932T.csv) useactual=no
+New Loadshape.PQ1987933R npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1987933R.csv) useactual=no
+New Loadshape.PQ1987933S npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1987933S.csv) useactual=no
+New Loadshape.PQ1987933T npts=1440 sinterval=1 PQCSVFile=(LoadShape\PQ1987933T.csv) useactual=no
+! =========================================
+New Load.PQ1360494R Phases=1 Bus1=6.1.4  kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1360494R
+New Load.PQ1360494S Phases=1 Bus1=6.2.4  kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1360494S
+New Load.PQ1360494T Phases=1 Bus1=6.3.4  kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1360494T
+New Load.PQ1779111R Phases=1 Bus1=8.1.4  kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1779111R
+New Load.PQ1779111S Phases=1 Bus1=8.2.4  kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1779111S
+New Load.PQ1779111T Phases=1 Bus1=8.3.4  kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1779111T
+New Load.PQ1469314R Phases=1 Bus1=10.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1469314R
+New Load.PQ1469314S Phases=1 Bus1=10.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1469314S
+New Load.PQ1469314T Phases=1 Bus1=10.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1469314T
+New Load.PQ1663574R Phases=1 Bus1=18.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663574R
+New Load.PQ1663574S Phases=1 Bus1=18.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663574S
+New Load.PQ1663574T Phases=1 Bus1=18.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663574T
+New Load.PQ1663570R Phases=1 Bus1=19.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663570R
+New Load.PQ1663570S Phases=1 Bus1=19.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663570S
+New Load.PQ1663570T Phases=1 Bus1=19.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663570T
+New Load.PQ1986275R Phases=1 Bus1=24.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986275R
+New Load.PQ1986275S Phases=1 Bus1=24.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986275S
+New Load.PQ1986275T Phases=1 Bus1=24.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986275T
+New Load.PQ1986223R Phases=1 Bus1=32.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986223R
+New Load.PQ1986223S Phases=1 Bus1=32.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986223S
+New Load.PQ1986223T Phases=1 Bus1=32.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986223T
+New Load.PQ2048360R Phases=1 Bus1=37.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ2048360R
+New Load.PQ2048360S Phases=1 Bus1=37.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ2048360S
+New Load.PQ2048360T Phases=1 Bus1=37.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ2048360T
+New Load.PQ1360495R Phases=1 Bus1=41.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1360495R
+New Load.PQ1360495S Phases=1 Bus1=41.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1360495S
+New Load.PQ1360495T Phases=1 Bus1=41.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1360495T
+New Load.PQ1986928R Phases=1 Bus1=50.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986928R
+New Load.PQ1986928S Phases=1 Bus1=50.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986928S
+New Load.PQ1986928T Phases=1 Bus1=50.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986928T
+New Load.PQ1986783R Phases=1 Bus1=49.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986783R
+New Load.PQ1986783S Phases=1 Bus1=49.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986783S
+New Load.PQ1986783T Phases=1 Bus1=49.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986783T
+New Load.PQ1986000R Phases=1 Bus1=58.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986000R
+New Load.PQ1986000S Phases=1 Bus1=58.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986000S
+New Load.PQ1986000T Phases=1 Bus1=58.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1986000T
+New Load.PQ1779071R Phases=1 Bus1=61.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1779071R
+New Load.PQ1779071S Phases=1 Bus1=61.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1779071S
+New Load.PQ1779071T Phases=1 Bus1=61.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1779071T
+New Load.PQ1663606R Phases=1 Bus1=63.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663606R
+New Load.PQ1663606S Phases=1 Bus1=63.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663606S
+New Load.PQ1663606T Phases=1 Bus1=63.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663606T
+New Load.PQ1663620R Phases=1 Bus1=65.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663620R
+New Load.PQ1663620S Phases=1 Bus1=65.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663620S
+New Load.PQ1663620T Phases=1 Bus1=65.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1663620T
+New Load.PQ2130827R Phases=1 Bus1=68.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ2130827R
+New Load.PQ2130827S Phases=1 Bus1=68.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ2130827S
+New Load.PQ2130827T Phases=1 Bus1=68.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ2130827T
+New Load.PQ1987932R Phases=1 Bus1=76.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1987932R
+New Load.PQ1987932S Phases=1 Bus1=76.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1987932S
+New Load.PQ1987932T Phases=1 Bus1=76.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1987932T
+New Load.PQ1987933R Phases=1 Bus1=75.1.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1987933R
+New Load.PQ1987933S Phases=1 Bus1=75.2.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1987933S
+New Load.PQ1987933T Phases=1 Bus1=75.3.4 kV=0.23 Model=1 kW=0.001 kvar=0.001 Vminpu=0.4 Vmaxpu=2 Daily=PQ1987933T
+! =========================================
+New Capacitor.Cap1  Phases=3 Bus1=76.1.2.3 kvar=30 kv=0.4 conn=Delta
+! =========================================
+
+
+Set Voltagebases=[0.400]
+calcv
+!set mode=Daily stepsize=1m loadmult=1 number=1440
+set mode=Daily stepsize=1s loadmult=1 number=1
